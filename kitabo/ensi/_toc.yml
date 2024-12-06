@@ -46,9 +46,9 @@ chapters:
       - title: Flow
         file: act3/act3
         sections:
-          - title: Theme
+          - title: Happiness
             file: act3/part3/part3_1
-          - title: Variation
+          - title: Iteration
             file: act3/part3/part3_2
 
   - file: act3/part3/part3_3
