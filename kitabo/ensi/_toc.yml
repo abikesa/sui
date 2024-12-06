@@ -28,27 +28,27 @@ chapters:
       - title: Déluge
         file: act3/act1
         sections:
-          - title: Biology (Embodiment)
+          - title: Cosmic
             file: act3/part1/part1_1
-          - title: Sociology (Tokenization)
+          - title: Earth
             file: act3/part1/part1_2
-          - title: Psychology (Transformation)
+          - title: Life
             file: act3/part1/part1_3
       - title: Gates
         file: act3/act2
         sections:
-          - title: Paradiso
+          - title: Man
             file: act3/part2/part2_1
-          - title: Limbo
+          - title: Fall
             file: act3/part2/part2_2
-          - title: Inferno
+          - title: Salvation
             file: act3/part2/part2_3
       - title: Flow
         file: act3/act3
         sections:
-          - title: Persona
+          - title: Theme
             file: act3/part3/part3_1
-          - title: Shadow
+          - title: Variation
             file: act3/part3/part3_2
 
   - file: act3/part3/part3_3
