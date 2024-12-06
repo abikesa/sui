@@ -5,27 +5,27 @@ chapters:
   # Sing O Muse!
   - file: act1/part1
     sections:
-      - title: Network
+      - title: Shadow
         file: act1/chapter1
-      - title: Layers
+      - title: Übermensch
         file: act1/chapter2
-      - title: Vision
+      - title: Individuation
         file: act1/chapter3
         
   # Sing O Muse!
   - file: act2/part2
     sections:
-      - title: Histology
+      - title: Biology
         file: act2/chapter1
-      - title: Ligands
+      - title: Sociology
         file: act2/chapter2
-      - title: Pathways
+      - title: Psychology
         file: act2/chapter3
 
   # Apollo
   - file: act3/part3
     sections:
-      - title: Emotional
+      - title: Déluge
         file: act3/act1
         sections:
           - title: Biology (Embodiment)
@@ -34,7 +34,7 @@ chapters:
             file: act3/part1/part1_2
           - title: Psychology (Transformation)
             file: act3/part1/part1_3
-      - title: Archetypal
+      - title: Gates
         file: act3/act2
         sections:
           - title: Paradiso
@@ -43,7 +43,7 @@ chapters:
             file: act3/part2/part2_2
           - title: Inferno
             file: act3/part2/part2_3
-      - title: Relational
+      - title: Flow
         file: act3/act3
         sections:
           - title: Persona
