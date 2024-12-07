@@ -402,6 +402,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-phrase">Full Phrase:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressive-dynamics">Expressive Dynamics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-i-got-the-script">How I Got the Script:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-xml-content">1. <strong>Copy the XML Content</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-file-in-vscode">2. <strong>Create the File in VSCode</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-file">3. <strong>Save the File</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-file-into-musescore">4. <strong>Import the File into MuseScore</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#musehub">MuseHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confirm-musehub-is-set-up">1. <strong>Confirm MuseHub is Set Up</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-xml-file">2. <strong>Save the XML File</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-file-in-musescore">3. <strong>Open the File in MuseScore</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhance-with-musehub-resources-optional">4. <strong>Enhance with MuseHub Resources (Optional)</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mary-did-you-know">Mary Did You Know?</a><ul class="nav section-nav flex-column">
@@ -478,6 +489,215 @@ document.write(`
 <li><p>Add a <strong>decrescendo</strong> on “-ly” and “Yeah” to reflect resignation and closure.</p></li>
 </ul>
 <p>Would you like me to generate a visual musical notation for this?</p>
+<p>It seems my environment doesn’t support the necessary library for generating musical notation directly. However, I can guide you through how to create this using music notation software like MuseScore or Sibelius. Here’s the structure for your phrase:</p>
+</section>
+<section id="notes">
+<h3>Notes:<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h3>
+<p><strong>“Unfortunately”:</strong></p>
+<ul class="simple">
+<li><p>“Un-”: D4 (quarter note)</p></li>
+<li><p>“-for-”: F4 (eighth note)</p></li>
+<li><p>“-tu-”: A4 (eighth note)</p></li>
+<li><p>“-nate-”: G4 (eighth note)</p></li>
+<li><p>“-ly”: C4 (eighth note)</p></li>
+</ul>
+<p><strong>“Yeah”:</strong></p>
+<ul class="simple">
+<li><p>Start: A4 (eighth note)</p></li>
+<li><p>Glide down: F4 (eighth note)</p></li>
+<li><p>Closure: D4 (eighth note)</p></li>
+</ul>
+<p>You can input these notes into your notation software using the above rhythm. If you’d like, I can create a visual example in another format—just let me know!</p>
+<iframe src="../../pdfs/orange_country.pdf" style="width:80%;height:300px"></iframe>
+</section>
+<section id="how-i-got-the-script">
+<h3>How I Got the Script:<a class="headerlink" href="#how-i-got-the-script" title="Permalink to this heading">#</a></h3>
+<p>To save the file using VSCode, you don’t need to modify the content of the XML file itself. Here’s how to proceed step-by-step:</p>
+</section>
+<hr class="docutils" />
+<section id="copy-the-xml-content">
+<h3>1. <strong>Copy the XML Content</strong><a class="headerlink" href="#copy-the-xml-content" title="Permalink to this heading">#</a></h3>
+<p>Use the following XML content for the file. Copy it exactly:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE score-partwise PUBLIC &quot;-//Recordare//DTD MusicXML 3.1 Partwise//EN&quot; &quot;http://www.musicxml.org/dtds/partwise.dtd&quot;&gt;</span>
+<span class="nt">&lt;score-partwise</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;3.1&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;part-list&gt;</span>
+<span class="w">    </span><span class="nt">&lt;score-part</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;P1&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;part-name&gt;</span>Voice<span class="nt">&lt;/part-name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/score-part&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/part-list&gt;</span>
+<span class="w">  </span><span class="nt">&lt;part</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;P1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;measure</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;attributes&gt;</span>
+<span class="w">        </span><span class="nt">&lt;divisions&gt;</span>1<span class="nt">&lt;/divisions&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>
+<span class="w">          </span><span class="nt">&lt;fifths&gt;</span>0<span class="nt">&lt;/fifths&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;time&gt;</span>
+<span class="w">          </span><span class="nt">&lt;beats&gt;</span>4<span class="nt">&lt;/beats&gt;</span>
+<span class="w">          </span><span class="nt">&lt;beat-type&gt;</span>4<span class="nt">&lt;/beat-type&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/time&gt;</span>
+<span class="w">        </span><span class="nt">&lt;clef&gt;</span>
+<span class="w">          </span><span class="nt">&lt;sign&gt;</span>G<span class="nt">&lt;/sign&gt;</span>
+<span class="w">          </span><span class="nt">&lt;line&gt;</span>2<span class="nt">&lt;/line&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/clef&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/attributes&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>D<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>4<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>quarter<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>F<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>A<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>G<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>C<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/measure&gt;</span>
+<span class="w">    </span><span class="nt">&lt;measure</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>A<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>F<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">      </span><span class="nt">&lt;note&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pitch&gt;</span>
+<span class="w">          </span><span class="nt">&lt;step&gt;</span>D<span class="nt">&lt;/step&gt;</span>
+<span class="w">          </span><span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pitch&gt;</span>
+<span class="w">        </span><span class="nt">&lt;duration&gt;</span>2<span class="nt">&lt;/duration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>eighth<span class="nt">&lt;/type&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/note&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/measure&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/part&gt;</span>
+<span class="nt">&lt;/score-partwise&gt;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="create-the-file-in-vscode">
+<h3>2. <strong>Create the File in VSCode</strong><a class="headerlink" href="#create-the-file-in-vscode" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open VSCode.</p></li>
+<li><p>Create a new file:</p>
+<ul class="simple">
+<li><p>Go to <strong>File &gt; New File</strong> or press <code class="docutils literal notranslate"><span class="pre">Ctrl+N</span></code> (Windows/Linux) or <code class="docutils literal notranslate"><span class="pre">Cmd+N</span></code> (Mac).</p></li>
+</ul>
+</li>
+<li><p>Paste the copied XML content into the new file.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="save-the-file">
+<h3>3. <strong>Save the File</strong><a class="headerlink" href="#save-the-file" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Save the file with the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> extension:</p>
+<ul class="simple">
+<li><p>Go to <strong>File &gt; Save As</strong> or press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+S</span></code> (Windows/Linux) or <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+S</span></code> (Mac).</p></li>
+<li><p>In the save dialog, name the file <code class="docutils literal notranslate"><span class="pre">Unfortunately_Yeah.xml</span></code>.</p></li>
+<li><p>Ensure the <strong>Save as type</strong> dropdown is set to <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Files</span></code> (not <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">Documents</span></code>) and the file extension is <code class="docutils literal notranslate"><span class="pre">.xml</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Save it in a location where you can easily find it.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="import-the-file-into-musescore">
+<h3>4. <strong>Import the File into MuseScore</strong><a class="headerlink" href="#import-the-file-into-musescore" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open MuseScore.</p></li>
+<li><p>Use <strong>File &gt; Open</strong> to navigate to where you saved <code class="docutils literal notranslate"><span class="pre">Unfortunately_Yeah.xml</span></code>.</p></li>
+<li><p>Select the file and open it.</p></li>
+</ol>
+<hr class="docutils" />
+<p>This process requires no code modification—just saving the provided content as an <code class="docutils literal notranslate"><span class="pre">.xml</span></code> file. If you still face any confusion, let me know!</p>
+</section>
+<section id="musehub">
+<h3>MuseHub<a class="headerlink" href="#musehub" title="Permalink to this heading">#</a></h3>
+<p>MuseHub is a great companion for MuseScore, providing access to additional content like sound libraries, plugins, and tools that enhance your experience. If you’re using MuseHub, here’s how you can proceed with opening the XML file in MuseScore:</p>
+</section>
+<hr class="docutils" />
+<section id="confirm-musehub-is-set-up">
+<h3>1. <strong>Confirm MuseHub is Set Up</strong><a class="headerlink" href="#confirm-musehub-is-set-up" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ensure MuseHub is installed and running.</p></li>
+<li><p>Confirm MuseScore is installed via MuseHub:</p>
+<ul>
+<li><p>Open MuseHub.</p></li>
+<li><p>Look for MuseScore in the <strong>Apps</strong> tab.</p></li>
+<li><p>If it’s not installed, click <strong>Install</strong> next to MuseScore.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="save-the-xml-file">
+<h3>2. <strong>Save the XML File</strong><a class="headerlink" href="#save-the-xml-file" title="Permalink to this heading">#</a></h3>
+<p>Follow the earlier steps to save the <code class="docutils literal notranslate"><span class="pre">Unfortunately_Yeah.xml</span></code> file using VSCode or any text editor. Place the file in an easily accessible location (like your Desktop).</p>
+</section>
+<hr class="docutils" />
+<section id="open-the-file-in-musescore">
+<h3>3. <strong>Open the File in MuseScore</strong><a class="headerlink" href="#open-the-file-in-musescore" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open <strong>MuseScore</strong> via MuseHub or directly from your desktop.</p></li>
+<li><p>In MuseScore:</p>
+<ul class="simple">
+<li><p>Click <strong>File &gt; Open</strong>.</p></li>
+<li><p>Navigate to the location where you saved <code class="docutils literal notranslate"><span class="pre">Unfortunately_Yeah.xml</span></code>.</p></li>
+<li><p>Select the file and click <strong>Open</strong>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="enhance-with-musehub-resources-optional">
+<h3>4. <strong>Enhance with MuseHub Resources (Optional)</strong><a class="headerlink" href="#enhance-with-musehub-resources-optional" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If MuseHub has sound libraries installed (e.g., orchestral or vocal sounds), MuseScore will use them automatically for playback.</p></li>
+<li><p>You can tweak the playback settings in MuseScore to hear the enhanced audio.</p></li>
+</ul>
+<hr class="docutils" />
+<p>If you have any issues with MuseHub or MuseScore, let me know! I’ll guide you further.</p>
 </section>
 </section>
 <section id="mary-did-you-know">
@@ -649,6 +869,17 @@ Together they complete the story, a journey far and wide.”</strong></p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-phrase">Full Phrase:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressive-dynamics">Expressive Dynamics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-i-got-the-script">How I Got the Script:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-xml-content">1. <strong>Copy the XML Content</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-file-in-vscode">2. <strong>Create the File in VSCode</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-file">3. <strong>Save the File</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-file-into-musescore">4. <strong>Import the File into MuseScore</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#musehub">MuseHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confirm-musehub-is-set-up">1. <strong>Confirm MuseHub is Set Up</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-xml-file">2. <strong>Save the XML File</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-file-in-musescore">3. <strong>Open the File in MuseScore</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhance-with-musehub-resources-optional">4. <strong>Enhance with MuseHub Resources (Optional)</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mary-did-you-know">Mary Did You Know?</a><ul class="nav section-nav flex-column">
