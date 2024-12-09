@@ -419,8 +419,8 @@ document.write(`
     <span class="s2">&quot;Ligands &amp; Receptors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Hormones&#39;</span><span class="p">,</span> <span class="s1">&#39;Neurotransmitters&#39;</span><span class="p">,</span> <span class="s1">&#39;Growth Factors&#39;</span><span class="p">,</span> <span class="s1">&#39;Cytokines&#39;</span><span class="p">],</span>
     <span class="s2">&quot;Pathways&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Signal Transduction&#39;</span><span class="p">,</span> <span class="s1">&#39;Metabolic&#39;</span><span class="p">,</span> <span class="s1">&#39;Epigenetic&#39;</span><span class="p">],</span>
     <span class="s2">&quot;Cells&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neurons&#39;</span><span class="p">,</span> <span class="s1">&#39;Epithelial&#39;</span><span class="p">,</span> <span class="s1">&#39;Immune Cells&#39;</span><span class="p">,</span> <span class="s1">&#39;Stem Cells&#39;</span><span class="p">],</span>
-    <span class="s2">&quot;Tissues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neural&#39;</span><span class="p">,</span> <span class="s1">&#39;Muscle&#39;</span><span class="p">,</span> <span class="s1">&#39;Connective&#39;</span><span class="p">,</span> <span class="s1">&#39;Epithelial&#39;</span><span class="p">],</span>
-    <span class="s2">&quot;Systems&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Musculosckeletal&#39;</span><span class="p">,</span> <span class="s1">&#39;Central Nervous&#39;</span><span class="p">,</span> <span class="s1">&#39;Lymphatic&#39;</span><span class="p">,</span> <span class="s1">&#39;Renal&#39;</span><span class="p">,</span> <span class="s1">&#39;Hepatic&#39;</span><span class="p">,</span> <span class="s1">&#39;Vascular&#39;</span><span class="p">],</span>
+   <span class="s2">&quot;Tissues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neural&#39;</span><span class="p">,</span> <span class="s1">&#39;Muscle&#39;</span><span class="p">,</span> <span class="s1">&#39;Connective&#39;</span><span class="p">,</span> <span class="s1">&#39;Epithelial&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Systems&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Vascular&#39;</span><span class="p">,</span> <span class="s1">&#39;Lymphatic&#39;</span><span class="p">],</span>
     <span class="s2">&quot;Immuno-Neuro-Endocrinology&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cytokines&#39;</span><span class="p">,</span> <span class="s1">&#39;Neurohormones&#39;</span><span class="p">,</span> <span class="s1">&#39;Endocrine Feedback&#39;</span><span class="p">],</span>
     <span class="s2">&quot;Molecular Biology&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;DNA&#39;</span><span class="p">,</span> <span class="s1">&#39;RNA&#39;</span><span class="p">,</span> <span class="s1">&#39;Proteins&#39;</span><span class="p">,</span> <span class="s1">&#39;Lipids&#39;</span><span class="p">],</span>
     <span class="s2">&quot;Omics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Genomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Proteomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Metabolomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Epigenomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Transcriptomics&#39;</span><span class="p">],</span>
@@ -487,19 +487,22 @@ document.write(`
 
 <span class="c1"># Highlight the Stress Pathway</span>
 <span class="n">stress_path</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span>  
-    <span class="s2">&quot;Life&quot;</span><span class="p">,</span> <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span>  
     <span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Drugs&quot;</span><span class="p">,</span>  
-    <span class="s2">&quot;Life&quot;</span><span class="p">,</span> <span class="s2">&quot;Drugs&quot;</span><span class="p">,</span>  
     <span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="s2">&quot;Drugs&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;Endocrine&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span> <span class="s2">&quot;Endocrine&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;Neuroendocrine Feedback&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Behavioral Outputs&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span>  <span class="s2">&quot;Functional Fitness&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;Quality of Life&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;Disease Risk&quot;</span>
+    <span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="s2">&quot;Toxins&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Life&quot;</span><span class="p">,</span> <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Life&quot;</span><span class="p">,</span> <span class="s2">&quot;Drugs&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Life&quot;</span><span class="p">,</span> <span class="s2">&quot;Toxins&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Drugs&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Toxins&quot;</span><span class="p">,</span> <span class="s2">&quot;Muscle Contraction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nutrients&quot;</span><span class="p">,</span> <span class="s2">&quot;Muscle Contraction&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Drugs&quot;</span><span class="p">,</span> <span class="s2">&quot;Muscle Contraction&quot;</span><span class="p">,</span> <span class="s2">&quot;Endocrine&quot;</span><span class="p">,</span> <span class="s2">&quot;Stress Response&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Muscle Contraction&quot;</span><span class="p">,</span> <span class="s2">&quot;Cardiovascular&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Stress Response&quot;</span><span class="p">,</span> <span class="s2">&quot;Cognitive Function&quot;</span><span class="p">,</span> <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Stress Response&quot;</span><span class="p">,</span> <span class="s2">&quot;Emotional States&quot;</span><span class="p">,</span> <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Stress Response&quot;</span><span class="p">,</span> <span class="s2">&quot;Behavioral Outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Functional Fitness&quot;</span>
 <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stress_path</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -517,7 +520,7 @@ document.write(`
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_full_biology</span><span class="p">,</span> <span class="n">pos_full_biology</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_full_biology</span><span class="p">,</span> <span class="n">pos_full_biology</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_full_biology</span><span class="p">,</span> <span class="n">pos_full_biology</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">edge_widths</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Transform Resources to Risks to Returns&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Diet, Locality, Climate, Recreation&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -525,7 +528,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/417f7c7166ec51410acca8d880861c537d2e382440a1716aca6884eedaad131d.png" src="../_images/417f7c7166ec51410acca8d880861c537d2e382440a1716aca6884eedaad131d.png" />
+<img alt="../_images/f76b8985c9caf38ecf52c93f67c6af3074238835e16a9bb0d8a79127a59ccc53.png" src="../_images/f76b8985c9caf38ecf52c93f67c6af3074238835e16a9bb0d8a79127a59ccc53.png" />
 </div>
 </div>
 <figure class="align-default" id="id1">
