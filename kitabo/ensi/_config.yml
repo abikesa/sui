@@ -5,7 +5,7 @@
 #######################################################################################
 # Book settings
 title                       : Sui # The title of the book. Will be placed in the left navbar.
-author                      : Marx, Nietzsche, Jung, Coen, Future, Metro # The author of the book
+author                      : Marx, Nietzsche, Jung, Coen, Future, and Metro # The author of the book
 copyright                   : "2025"  # Copyright year to be placed in the footer
 logo                        : https://upload.wikimedia.org/wikipedia/en/e/ef/Future_–_Mask_Off.jpg  # A path to the book logo
 email                       : "abikesa.sh@gmail.com"
