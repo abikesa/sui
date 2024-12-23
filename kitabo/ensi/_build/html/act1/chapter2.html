@@ -480,6 +480,125 @@ document.write(`
 <p><em>These trivial matters—diet, locality, climate, and one’s mode of recreation, the whole casuistry of self-love—are inconceivably more important than, all that which has hitherto been held in high esteem!</em><br />
 – <a class="reference external" href="https://www.gutenberg.org/files/52190/52190-h/52190-h.htm">Why I am so clever</a>, Ecce Homo</p>
 <p>Nietzsche’s assertion in <em>Ecce Homo</em> reflects his radical re-evaluation of values, emphasizing the embodied, mundane aspects of life—diet, environment, recreation—as the true determinants of vitality and creativity. In this context, he contrasts the “trivial” with the “highly esteemed” abstractions, such as metaphysical ideals or moral codes, suggesting that the former is far more consequential for the flourishing of the individual.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Define input layers explicitly incorporating photons and SCN</span>
+<span class="n">input_layers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Cosmic and Environmental Inputs&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Photons&#39;</span><span class="p">,</span> <span class="s1">&#39;ipGCs&#39;</span><span class="p">,</span> <span class="s1">&#39;SCN&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Biology&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Man&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Drugs and External Factors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Drugs&#39;</span><span class="p">,</span> <span class="s1">&#39;Nutrients&#39;</span><span class="p">,</span> <span class="s1">&#39;Toxins&#39;</span><span class="p">,</span> <span class="s1">&#39;Radiation&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Ligands &amp; Receptors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Hormones&#39;</span><span class="p">,</span> <span class="s1">&#39;Neurotransmitters&#39;</span><span class="p">,</span> <span class="s1">&#39;Growth Factors&#39;</span><span class="p">,</span> <span class="s1">&#39;Cytokines&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Pathways&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Signal Transduction&#39;</span><span class="p">,</span> <span class="s1">&#39;Metabolic&#39;</span><span class="p">,</span> <span class="s1">&#39;Epigenetic&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Cells&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neurons&#39;</span><span class="p">,</span> <span class="s1">&#39;Immune Cells&#39;</span><span class="p">,</span> <span class="s1">&#39;Stem Cells&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Tissues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neural&#39;</span><span class="p">,</span> <span class="s1">&#39;Muscle&#39;</span><span class="p">,</span> <span class="s1">&#39;Connective&#39;</span><span class="p">,</span> <span class="s1">&#39;Epithelial&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Systems&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Vascular&#39;</span><span class="p">,</span> <span class="s1">&#39;Lymphatic&#39;</span><span class="p">,</span> <span class="s1">&#39;Endocrine&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Neurochemical Dynamics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Melatonin&#39;</span><span class="p">,</span> <span class="s1">&#39;Serotonin&#39;</span><span class="p">,</span> <span class="s1">&#39;Dopamine&#39;</span><span class="p">,</span> <span class="s1">&#39;Norepinephrine&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Immuno-Neuro-Endocrinology&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cytokines&#39;</span><span class="p">,</span> <span class="s1">&#39;Neurohormones&#39;</span><span class="p">,</span> <span class="s1">&#39;Endocrine Feedback&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Molecular Biology&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;DNA&#39;</span><span class="p">,</span> <span class="s1">&#39;RNA&#39;</span><span class="p">,</span> <span class="s1">&#39;Proteins&#39;</span><span class="p">,</span> <span class="s1">&#39;Lipids&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Omics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Genomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Proteomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Metabolomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Epigenomics&#39;</span><span class="p">,</span> <span class="s1">&#39;Transcriptomics&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Quantum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Energy&#39;</span><span class="p">,</span> <span class="s1">&#39;Particles&#39;</span><span class="p">,</span> <span class="s1">&#39;Spin&#39;</span><span class="p">,</span> <span class="s1">&#39;Wave Functions&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Define output layers</span>
+<span class="n">output_layers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Molecular Outputs&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Electron Transfer&#39;</span><span class="p">,</span> <span class="s1">&#39;Molecular Stability&#39;</span><span class="p">,</span> <span class="s1">&#39;Reaction Dynamics&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Cellular Behavior&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ATP Production&#39;</span><span class="p">,</span> <span class="s1">&#39;Membrane Potential&#39;</span><span class="p">,</span> <span class="s1">&#39;DNA Repair&#39;</span><span class="p">,</span> <span class="s1">&#39;Protein Synthesis&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Tissue-Level Dynamics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neural Activity&#39;</span><span class="p">,</span> <span class="s1">&#39;Muscle Contraction&#39;</span><span class="p">,</span> <span class="s1">&#39;Immune Responses&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Organ Systems&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cardiovascular&#39;</span><span class="p">,</span> <span class="s1">&#39;Immune&#39;</span><span class="p">,</span> <span class="s1">&#39;Nervous&#39;</span><span class="p">,</span> <span class="s1">&#39;Endocrine&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Physiological States&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Homeostasis&#39;</span><span class="p">,</span> <span class="s1">&#39;Stress Response&#39;</span><span class="p">,</span> <span class="s1">&#39;Energy Balance&#39;</span><span class="p">,</span> <span class="s1">&#39;Neuroendocrine Feedback&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Behavioral and Psychological Outcomes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cognitive Function&#39;</span><span class="p">,</span> <span class="s1">&#39;Emotional States&#39;</span><span class="p">,</span> <span class="s1">&#39;Behavioral Outputs&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Sociological and Environmental Interactions&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Social Structures&#39;</span><span class="p">,</span> <span class="s1">&#39;Environmental Interactions&#39;</span><span class="p">,</span> <span class="s1">&#39;Sociological Outputs&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Functional Health Outcomes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Longevity&#39;</span><span class="p">,</span> <span class="s1">&#39;Disease Risk&#39;</span><span class="p">,</span> <span class="s1">&#39;Quality of Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Functional Fitness&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Merge input and output layers</span>
+<span class="n">full_layers</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">input_layers</span><span class="p">,</span> <span class="o">**</span><span class="n">output_layers</span><span class="p">}</span>
+
+<span class="c1"># Initialize the graph</span>
+<span class="n">G_neural_network</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="c1"># Add nodes for each layer</span>
+<span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">full_layers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">G_neural_network</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span>
+
+<span class="c1"># Connect layers sequentially</span>
+<span class="n">layer_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">full_layers</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">layer_names</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">source_layer</span> <span class="o">=</span> <span class="n">full_layers</span><span class="p">[</span><span class="n">layer_names</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">target_layer</span> <span class="o">=</span> <span class="n">full_layers</span><span class="p">[</span><span class="n">layer_names</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">source_node</span> <span class="ow">in</span> <span class="n">source_layer</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">target_node</span> <span class="ow">in</span> <span class="n">target_layer</span><span class="p">:</span>
+            <span class="n">G_neural_network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source_node</span><span class="p">,</span> <span class="n">target_node</span><span class="p">)</span>
+
+<span class="c1"># Define positions for visualization</span>
+<span class="n">pos_network</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">layer_spacing</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">node_spacing</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">full_layers</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">layer_spacing</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">layer_names</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">layer_spacing</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">node_spacing</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">node_spacing</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">pos_network</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Restore original color coding for key pathways</span>
+<span class="n">highlighted_layers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Physiological States&quot;</span><span class="p">:</span> <span class="s2">&quot;lightsalmon&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Behavioral and Psychological Outcomes&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sociological and Environmental Interactions&quot;</span><span class="p">:</span> <span class="s2">&quot;paleturquoise&quot;</span>
+<span class="p">}</span>
+
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G_neural_network</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">highlighted_layers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">full_layers</span><span class="p">[</span><span class="n">layer_name</span><span class="p">]:</span>
+            <span class="n">node_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">node_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;lightgray&quot;</span><span class="p">)</span>  <span class="c1"># Default gray for uncolored nodes</span>
+
+<span class="c1"># Highlight the cosmic-neurochemical pathway</span>
+<span class="n">cosmic_path</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Cosmos&quot;</span><span class="p">,</span> <span class="s2">&quot;Photons&quot;</span><span class="p">,</span> <span class="s2">&quot;ipGCs&quot;</span><span class="p">,</span> <span class="s2">&quot;SCN&quot;</span><span class="p">,</span> <span class="s2">&quot;Melatonin&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Serotonin&quot;</span><span class="p">,</span> <span class="s2">&quot;Dopamine&quot;</span><span class="p">,</span> <span class="s2">&quot;Norepinephrine&quot;</span><span class="p">,</span> <span class="s2">&quot;Stress Response&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Cognitive Function&quot;</span><span class="p">,</span> <span class="s2">&quot;Behavioral Outputs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sociological Outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;Functional Fitness&quot;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosmic_path</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">G_neural_network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">cosmic_path</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cosmic_path</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">edge_widths</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G_neural_network</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cosmic_path</span><span class="p">,</span> <span class="n">cosmic_path</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">edge_widths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">edge_widths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Draw the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_neural_network</span><span class="p">,</span> <span class="n">pos_network</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_neural_network</span><span class="p">,</span> <span class="n">pos_network</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_neural_network</span><span class="p">,</span> <span class="n">pos_network</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">edge_widths</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Neural Network: Cosmic Inputs to Neurochemical Dynamics&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/5d8992e1b1587ed7d33c727c9ca3fae26c121106fe8a081377051b2b0dbe662c.png" src="../_images/5d8992e1b1587ed7d33c727c9ca3fae26c121106fe8a081377051b2b0dbe662c.png" />
+</div>
+</div>
 <p>This sentiment embodies his broader philosophy: life and health are the ultimate metrics of value. Nietzsche’s disdain for the ascetic ideals and metaphysical abstractions of traditional philosophy or religion stems from their alienation from the concrete realities of existence. For him, the “casuistry of self-love” is not indulgence but a deep, thoughtful engagement with one’s life forces—a practice of <em>amor fati</em>, the love of one’s fate.</p>
 <p>The irony here is that Nietzsche repositions what society often dismisses as trivial—what we eat, where we live, how we move—as not only significant but foundational to achieving greatness. His approach critiques the common tendency to prioritize the abstract and moral over the tangible and physiological.</p>
 <p>To me, Nietzsche’s argument here is provocative and incisive. It challenges us to rethink our priorities and honor the mundane as sacred. It’s a reminder that the roots of intellectual and spiritual vitality lie in the seemingly inconsequential rhythms of daily life—a philosophy that feels astonishingly modern in its resonance with wellness culture and the increasing recognition of the interplay between mind, body, and environment.</p>
